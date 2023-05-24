@@ -4,6 +4,7 @@ const db = require("./utils/database"); // OJO CON LA IMPORTACION ENTRE () (SOLO
 const Todos = require('./models/todos.model'); // OJO CON LA IMPORTACION ENTRE () (SOLO VA UN PUNTO './XXXXX/XXXX.XXXX');
 // SE IMPORTO EL COMPONENTE TODOS //
 const { json } = require("sequelize");
+const cors = require('cors');
 require('dotenv').config();
 
 
@@ -21,6 +22,8 @@ db.sync() // ES UNA FUNCION QUE SINCRONIZA LA BASE DE DATOS Y CREA O MODIFICA LA
 
   const app = express();
 
+  app.use(cors());
+  
   app.use(express.json());
 
 
